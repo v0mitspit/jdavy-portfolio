@@ -10,8 +10,8 @@
     <link rel="icon" type="image/favicon.ico" href="/images/icon.png">
     <link rel="stylesheet" href="style.css">
     <title>Joshua Davy - Personal Portfolio</title>
-    
-    
+
+
 
 
 </head>
@@ -36,29 +36,75 @@
         </div>
     </div>
 
-<!-- About Me Section -->
-<div id="about">
-    
-    <div class="container">
-        <div class="row">
-            <div class ="about-col-1">
-            <img src="images/user.png">
+    <!-- About Me Section -->
+    <div id="about">
+
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac pretium ex. Curabitur auctor blandit mi, sed tempor urna molestie eu. Suspendisse massa sapien, egestas sed tristique vitae, facilisis vitae enim. Nam dictum erat a libero condimentum pulvinar.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>PCB Design</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>Game Design</span><br>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>SEng Student, 2022-Present</span><br>Lorem ipsum dolor sit amet.</li>
+                        <li><span>PCB Design Engineer, 2018-2022</span><br>Lorem ipsum dolor sit amet.</li>
+                        <li><span>Hobby Game Design,2018-Present</span><br>Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Software ENG, UoLeicester</span><br>Lorem ipsum dolor sit amet.</li>
+                        <li><span>Electrical ENG, Lincoln College</span><br>Lorem ipsum dolor sit amet.</li>
+                        <li><span>Engineering, LCHS 6th Form</span><br>Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                </div>
+
+
             </div>
-            
-            <div class ="about-col-2">
-               <h1 class="sub-title">About Me</h1>
-               
-                
-            </div>
-            
+
         </div>
     </div>
-    
-    
-    
-    
-</div>
 
+    <script>
+        
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    
 </body>
 
 </html>
