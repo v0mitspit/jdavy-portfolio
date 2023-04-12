@@ -52,7 +52,7 @@ nav ul li a::after {
     content: '';
     width: 0%;
     height: 2.5px;
-    background: #7b7d5d;
+    background: #a1ba86;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -77,7 +77,7 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-    color: #7b7d5d;
+    color: #a1ba86;
 
 }
 
@@ -85,7 +85,7 @@ nav ul li a:hover::after {
 
 #about {
     padding: 80px 0;
-    color: #7b7d5d;
+    color: #fff;
 }
 
 .row {
@@ -114,7 +114,7 @@ nav ul li a:hover::after {
 .sub-title {
     font-size: 60px;
     font-weight: 600;
-    color: #7b7d5d;
+    color: #a1ba86;
 }
 
 .tab-titles {
@@ -137,7 +137,7 @@ nav ul li a:hover::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #7b7d5d;
+    background: #a1ba86;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -156,7 +156,7 @@ nav ul li a:hover::after {
 }
 
 .tab-contents ul li span {
-    color: #7b7d5d;
+    color: #a1ba86;
     font-size: 15px;
 }
 
@@ -214,7 +214,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div:hover {
-    background: #7b7d5d;
+    background: #a1ba86;
     transform: translateY(-10px);
 }
 
@@ -248,7 +248,7 @@ nav ul li a:hover::after {
 .layer {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), #7b7d5d);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #a1ba86);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -272,7 +272,7 @@ nav ul li a:hover::after {
 
 .layer a {
     margin-top: 20px;
-    color: #7b7d5d;
+    color: #a1ba86;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -293,23 +293,73 @@ nav ul li a:hover::after {
 }
 
 .btn {
-    background: #7b7d5d;
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #7b7d5d;
+    border: 1px solid #a1ba86;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
+    color: #fff;
     transition: background 0.3s;
 }
 
 /* take note to maybe change all hovers to this colour */
 
 .btn:hover {
-    background: #7b7d2d;
+    background: #a1ba86;
 
 }
+
+/* Contact me */
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 35%;
+}
+
+.contact-left p{
+    margin-left: 30px; 
+    
+}
+
+.contact-left p i{
+    margin-right: 15px;
+    font-size: 25px;
+    
+}
+
+.social-icons{
+    margin-top: 30px;
+    
+}
+
+.social-icons a{
+   text-decoration: none;
+    font-size: 30px;
+    margin-left: 15px;
+    color: #fff;
+    display: inline-block;
+    transition: transform 0.3s;
+    
+}
+
+.social-icons a:hover{
+    color: #a1ba86
+    transform: translateY(-5px);
+    
+}
+
+.btn.btn2{
+    display: inline-block;
+    
+}
+
+
+
 
 
 
