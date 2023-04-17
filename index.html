@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/ocr-a-extended" rel="stylesheet">
     <link rel="icon" type="image/png" href="./images/icon.png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e25f5997ae.js" crossorigin="anonymous"></script>
@@ -20,11 +20,11 @@
             <nav>
                 <img src="images/logo.png" class="logo">
                 <ul id="sidemenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac pretium ex. Curabitur auctor blandit mi, sed tempor urna molestie eu. Suspendisse massa sapien, egestas sed tristique vitae, facilisis vitae enim. Nam dictum erat a libero condimentum pulvinar.</p>
+                    <p>Software engineering student with 4 years of PCB design experience. Proficient in HTML, CSS, Python, Java. I aspire to become a front and back end developer for websites and apps. I'm eager to learn and adaptable to new disciplines.</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -169,12 +169,13 @@
                 </div>
 
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
 
                 <div class="contact-left">
@@ -206,12 +207,11 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-
     </script>
 
 
     <script>
-        var sidemenu = document.getElementById(sidemenu);
+        var sidemenu = document.getElementById("sidemenu");
 
         function openmenu() {
             sidemenu.style.right = "0";
@@ -220,8 +220,37 @@
         function closemenu() {
             sidemenu.style.right = "-200px";
         }
-
     </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby5bWBDefP3qg1X9yBuZndU8vk8TcKQUewNUXXTb0xgYDzHd4VySA3YwTdkhn_u0ZQw5A/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const msg = document.getElementById("msg");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+      .then(response => {
+        if (response.ok) {
+          msg.innerHTML = "Sent successfully";
+          setTimeout(function() {
+            msg.innerHTML = "";
+          }, 5000);
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+      });
+  });
+</script>
+
 
 </body>
 
