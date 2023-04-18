@@ -55,30 +55,30 @@
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>Programming</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>PCB Design</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>Game Design</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>Programming</span><br>Experience with a variety of programming languages, including Python, Java, and JavaScript. I've built numerous websites and applications, ranging from simple static pages to complex e-commerce platforms.</li>
+                            <li><span>PCB Design</span><br>Experience using software such as OrCad and Allegro PCB to create high-quality, reliable PCB layouts. I've worked with hardware engineers and manufacturers to ensure that designs meet technical specifications and can be produced efficiently.</li>
+                            <li><span>Game Design</span><br>Experience developing games for various platforms, including mobile, console, and PC. I've worked on both small indie games and large-scale commercial releases, and have experience with game engines such as Unity and Unreal Engine. </li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>SEng Student, 2022-Present</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>PCB Design Engineer, 2018-2022</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>Hobby Game Design,2018-Present</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>Software Eng Degree, 2022-Present</span><br>Completed a software development project as part of a team, using Agile methodology and writing code in Java and Python.Took coursework in data structures and algorithms, computer networks, and software engineering principles.</li>
+                            <li><span>PCB Design Engineer, 2018-2022</span><br>Designed and built a circuit board as part of a team, using Altium Designer and working with microcontrollers, sensors, and actuators.Completed coursework in power systems, control systems, and digital signal processing.</li>
+                
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>Software ENG, UoLeicester</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>Electrical ENG, Lincoln College</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>Software Eng, University of Leicester</span><br>BSC Undergraduate Degree</li>
+                            <li><span>Electrical Eng, Lincoln College</span><br></li>
                             <li><span>Engineering, LCHS 6th Form</span><br>Lorem ipsum dolor sit amet.</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="hobbies">
                         <ul>
-                            <li><span>Chess</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>Running</span><br>Lorem ipsum dolor sit amet.</li>
-                            <li><span>Motorsport</span><br>Lorem ipsum dolor sit amet.</li>
+                            <li><span>Chess</span><br>Member of UoL Chess Society : Strategic and methodical thinking.</li>
+                            <li><span>Running</span><br>Local park run regular : Determined and Focused on the end goal.</li>
+                            <li><span>Motorsport</span><br>Enjoy the complete team process and competitive nature of sport.</li>
                         </ul>
                     </div>
                 </div>
@@ -207,6 +207,7 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
+
     </script>
 
 
@@ -220,36 +221,38 @@
         function closemenu() {
             sidemenu.style.right = "-200px";
         }
+
     </script>
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycby5bWBDefP3qg1X9yBuZndU8vk8TcKQUewNUXXTb0xgYDzHd4VySA3YwTdkhn_u0ZQw5A/exec';
-  const form = document.forms['submit-to-google-sheet'];
-  const msg = document.getElementById("msg");
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby5bWBDefP3qg1X9yBuZndU8vk8TcKQUewNUXXTb0xgYDzHd4VySA3YwTdkhn_u0ZQw5A/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
-    fetch(scriptURL, {
-      method: 'POST',
-      body: new FormData(form)
-    })
-      .then(response => {
-        if (response.ok) {
-          msg.innerHTML = "Sent successfully";
-          setTimeout(function() {
-            msg.innerHTML = "";
-          }, 5000);
-          form.reset();
-        } else {
-          throw new Error('Network response was not ok.');
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-      });
-  });
-</script>
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        msg.innerHTML = "Sent successfully";
+                        setTimeout(function() {
+                            msg.innerHTML = "";
+                        }, 5000);
+                        form.reset();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                });
+        });
+
+    </script>
 
 
 </body>
