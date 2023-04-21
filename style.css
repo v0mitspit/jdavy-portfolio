@@ -36,11 +36,11 @@ nav {
 }
 
 .logo {
-    width: 140px
+    width: 140px; 
+
 }
 
 nav ul li {
-
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
@@ -411,7 +411,7 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/phone-background.jpg)      
+        background-image: url(images/phone-background.jpg);     
     }
     .header-text {
         margin-top: 100%;
@@ -457,7 +457,7 @@ nav .fa-solid{
         margin-bottom: 30px;
     }
     .about-col-2{
-        font-size: 14px;
+        font-size: 15px;
     }
     .tab-links{
         font-size: 16px;
